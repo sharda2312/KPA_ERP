@@ -111,8 +111,9 @@ This endpoint retrieves a list of wheel specification forms. It supports filteri
 ### 2. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-project-directory>
+git clone https://github.com/sharda2312/kpa_erp.git
+
+cd KPA_ERP
 ```
 
 ### 3. Create a Virtual Environment
@@ -149,48 +150,21 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory:
 
 ```
-SECRET_KEY='your-django-secret-key-here'
-DEBUG=True
-
-DB_NAME='kpa_erp_db'
-DB_USER='your_postgres_user'
-DB_PASSWORD='your_postgres_password'
-DB_HOST='localhost'
-DB_PORT='5432'
+dbname='kpa_erp_db'
+user='your_postgres_user'
+password='your_postgres_password'
+host='localhost'
+port='6543'
 ```
 
-### 6. Configure `settings.py`
-
-Import dotenv and load the environment variables:
-
-```python
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': os.getenv('DB_NAME'),
-    'USER': os.getenv('DB_USER'),
-    'PASSWORD': os.getenv('DB_PASSWORD'),
-    'HOST': os.getenv('DB_HOST'),
-    'PORT': os.getenv('DB_PORT'),
-  }
-}
-```
-
-### 7. Run Database Migrations
+### 6. Run Database Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 8. Start the Development Server
+### 7. Start the Development Server
 
 ```bash
 python manage.py runserver
