@@ -15,14 +15,10 @@ class WheelSpecification(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        """
-        String representation of the model, useful for the Django admin interface.
-        """
-        return f"Wheel Spec Form: {self.form_number}"
+       return f"Wheel Spec Form: {self.form_number}"
 
     class Meta:
-        # Optional: Defines metadata for the model.
         verbose_name = "Wheel Specification"
         verbose_name_plural = "Wheel Specifications"
-        ordering = ['-submitted_date'] # Orders records by submission date by default.
+        ordering = ['-submitted_date']
 
